@@ -307,6 +307,10 @@ export default function Page() {
                 value={data.classification.subject}
               />
               <Field
+                label="Chapter Group"
+                value={data.classification.chapter_group}
+              />
+              <Field
                 label="Chapter"
                 value={data.classification.chapter}
               />

@@ -1,0 +1,43 @@
+{
+  "classification": {
+    "subject": "",
+    "chapter_group": "",
+    "chapter": "",
+    "topic": "",
+    "tags": {
+      "exam_type": [],
+      "question_type": []
+    }
+  },
+  "question_details": {
+    "assessment_type": "",
+    "difficulty_level": ""
+  },
+  "content": {
+    "question_text": "",
+    "options": [
+      "A) ",
+      "B) ",
+      "C) ",
+      "D) "
+    ],
+    "correct_answer": "",
+    "quick_hint": "",
+    "detailed_solution": ""
+  }
+}
+// i need the answer like this format not json but looks like that so i easyliy copy and paste to my website and submit 
+// all the answer also remove the (a), (b) like that prefix in the option 
+// example:
+1. Motion of a particle is given by equation
+s t = + (3 7 1 t t + + 4 8) m. 3 2
+The value of acceleration of the particle at t = 1 second 
+is
+(a) 10 m/s2 (b) 32 m/s2
+(c) 23 m/s2 (d) 16 m/s2
+[AIPMT 2000]// this [AIPMT 2000] is have this question in question key and this is also in bold
+1. (b) 2. (c) 3. (b) 4. (a) 5. (d) 6. (a) 7. (a) 8. (c) 9. (a) 10. (a)
+11. (d) 12. (c) 13. (c) 14. (b) 15. (a) 16. (b) 17. (c) 18. (d) 19. (b) 20. (b)
+21. (c) 22. (c) 23. (b) 24. (c) 25. (b) 26. (d) 27. (a) 28. (c) 29. (b) 30. (d)
+31. (c) 32. (b) 33. (b) 34. (a) 35. (d) 36. (a) 37. (b) 38. (b) 39. (c) 40. (c)
+41. (c)
