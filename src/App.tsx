@@ -320,6 +320,14 @@ export default function Page() {
               />
               <TagsField tags={data.classification.tags} />
               <Field
+                label="Assessment Type"
+                value={data.question_details.assessment_type}
+              />
+              <Field
+                label="Difficulty Level"
+                value={data.question_details.difficulty_level}
+              />
+              <Field
                 label="Question"
                 value={data.content.question_text}
               />
