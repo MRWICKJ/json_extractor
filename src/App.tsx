@@ -37,6 +37,37 @@ function OptionsList({ options }: { options: string[] }) {
   );
 }
 
+function TagsField({ tags }: { tags: Record<string, string[]> }) {
+  return (
+    <div className="bg-[#111111] rounded-lg p-6 border border-[#222222] shadow-[0px_1px_1px_#00000020,0px_2px_2px_#00000030]">
+      <div className="flex items-center justify-between mb-4">
+        <span className="font-mono text-xs uppercase tracking-wide text-[#555555]">
+          Tags
+        </span>
+      </div>
+      <div className="space-y-3">
+        {Object.entries(tags).map(([category, values]) => (
+          <div key={category}>
+            <span className="text-xs text-[#555555] font-mono uppercase tracking-wide mb-2 block">
+              {category.replace(/_/g, " ")}
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {values.map((v) => (
+                <span
+                  key={v}
+                  className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#1a1a1a] text-[#888888] border border-[#222222]"
+                >
+                  {v}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function OptionRow({ label, value }: { label: string; value: string }) {
   const [copied, setCopied] = useState(false);
 
@@ -283,6 +314,7 @@ export default function Page() {
                 label="Topic"
                 value={data.classification.topic}
               />
+              <TagsField tags={data.classification.tags} />
               <Field
                 label="Question"
                 value={data.content.question_text}
