@@ -176,14 +176,26 @@ export default function Page() {
   const [data, setData] = useState<any>(null);
   const [copiedAll, setCopiedAll] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const items: any[] = Array.isArray(data) ? data : data ? [data] : [];
 
   const parseJson = () => {
     setError(null);
+    setCurrentIndex(0);
     try {
       const parsed = JSON.parse(jsonText);
       setData(parsed);
     } catch {
-      setError("Invalid JSON — please check your input and try again.");
+      try {
+        const fixed = jsonText
+          .replace(/\t/g, "\\t")
+          .replace(/\r/g, "\\r");
+        const parsed = JSON.parse(fixed);
+        setData(parsed);
+      } catch {
+        setError("Invalid JSON — LaTeX commands like \\text, \\mathrm, \\rightarrow use \\t and \\r which JSON interprets as control characters. Try replacing \\text with \\\\text, or use the .json file directly.");
+      }
     }
   };
 
@@ -191,10 +203,11 @@ export default function Page() {
     setJsonText("");
     setData(null);
     setError(null);
+    setCurrentIndex(0);
   };
 
   const copyAll = () => {
-    const raw = JSON.stringify(data, null, 2);
+    const raw = JSON.stringify(items[currentIndex], null, 2);
     navigator.clipboard.writeText(sanitizeLatex(raw));
     setCopiedAll(true);
     setTimeout(() => setCopiedAll(false), 1500);
@@ -326,7 +339,9 @@ export default function Page() {
           </div>
         </div>
 
-        {data && (
+        {items.length > 0 && (() => {
+          const item = items[currentIndex];
+          return (
           <div className="mt-8 space-y-6">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold text-[#ededed] tracking-tight">
@@ -341,52 +356,75 @@ export default function Page() {
               </button>
             </div>
 
+            {items.length > 1 && (
+              <div className="flex items-center justify-between bg-[#111111] rounded-lg p-4 border border-[#222222]">
+                <button
+                  onClick={() => setCurrentIndex((i) => Math.max(0, i - 1))}
+                  disabled={currentIndex === 0}
+                  className="text-xs font-mono text-[#555555] hover:text-[#ededed] disabled:opacity-30 disabled:pointer-events-none transition-colors px-3 py-1.5 rounded-md hover:bg-[#1a1a1a]"
+                >
+                  ← Previous
+                </button>
+                <span className="text-xs font-mono text-[#555555]">
+                  {currentIndex + 1} / {items.length}
+                </span>
+                <button
+                  onClick={() => setCurrentIndex((i) => Math.min(items.length - 1, i + 1))}
+                  disabled={currentIndex === items.length - 1}
+                  className="text-xs font-mono text-[#555555] hover:text-[#ededed] disabled:opacity-30 disabled:pointer-events-none transition-colors px-3 py-1.5 rounded-md hover:bg-[#1a1a1a]"
+                >
+                  Next →
+                </button>
+              </div>
+            )}
+
             <div className="grid gap-4">
               <Field
                 label="Subject"
-                value={data.classification.subject}
+                value={item.classification.subject}
               />
               <Field
                 label="Chapter Group"
-                value={data.classification.chapter_group}
+                value={item.classification.chapter_group}
               />
               <Field
                 label="Chapter"
-                value={data.classification.chapter}
+                value={item.classification.chapter}
               />
               <Field
                 label="Topic"
-                value={data.classification.topic}
+                value={item.classification.topic}
               />
-              <TagsField tags={data.classification.tags} />
+              <TagsField tags={item.classification.tags} />
               <Field
                 label="Assessment Type"
-                value={data.question_details.assessment_type}
+                value={item.question_details.assessment_type}
               />
               <Field
                 label="Difficulty Level"
-                value={data.question_details.difficulty_level}
+                value={item.question_details.difficulty_level}
               />
               <Field
                 label="Question"
-                value={data.content.question_text}
+                value={item.content.question_text}
               />
-              <OptionsList options={data.content.options} />
+              <OptionsList options={item.content.options} />
               <Field
                 label="Answer"
-                value={data.content.correct_answer}
+                value={item.content.correct_answer}
               />
               <Field
                 label="Hint"
-                value={data.content.quick_hint}
+                value={item.content.quick_hint}
               />
               <Field
                 label="Solution"
-                value={data.content.detailed_solution}
+                value={item.content.detailed_solution}
               />
             </div>
           </div>
-        )}
+          );
+        })()}
       </main>
 
       <footer className="border-t border-[#222222] bg-[#000000]">
