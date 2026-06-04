@@ -1,7 +1,11 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import katex from "katex";
+
+function sanitizeLatex(s: string) {
+  return s.replace(/\t/g, "\\t").replace(/\r/g, "\\r");
+}
 
 function CopyIcon({ size = 14 }: { size?: number }) {
   return (
@@ -22,7 +26,8 @@ function CheckIcon({ size = 14 }: { size?: number }) {
 function LatexText({ text }: { text: string }) {
   const parts = useMemo(() => {
     const result: { type: "text" | "math"; content: string }[] = [];
-    const segments = text.split(/(\$[^$]+\$)/g);
+    const sanitized = sanitizeLatex(text);
+    const segments = sanitized.split(/(\$[^$]+\$)/g);
     for (const seg of segments) {
       if (seg.startsWith("$") && seg.endsWith("$")) {
         const math = seg.slice(1, -1);
@@ -105,11 +110,11 @@ function TagsField({ tags }: { tags: Record<string, string[]> }) {
 function OptionRow({ label, value }: { label: string; value: string }) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(value);
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(sanitizeLatex(value));
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
-  };
+  }, [value]);
 
   return (
     <div className="flex items-center gap-3 group">
@@ -139,11 +144,11 @@ function Field({
 }) {
   const [copied, setCopied] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(value);
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(sanitizeLatex(value));
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
-  };
+  }, [value]);
 
   return (
     <div className="bg-[#111111] rounded-lg p-6 border border-[#222222] shadow-[0px_1px_1px_#00000020,0px_2px_2px_#00000030]">
@@ -189,7 +194,8 @@ export default function Page() {
   };
 
   const copyAll = () => {
-    navigator.clipboard.writeText(JSON.stringify(data, null, 2));
+    const raw = JSON.stringify(data, null, 2);
+    navigator.clipboard.writeText(sanitizeLatex(raw));
     setCopiedAll(true);
     setTimeout(() => setCopiedAll(false), 1500);
   };
