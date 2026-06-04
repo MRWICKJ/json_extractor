@@ -35,9 +35,55 @@ The value of acceleration of the particle at t = 1 second
 is
 (a) 10 m/s2 (b) 32 m/s2
 (c) 23 m/s2 (d) 16 m/s2
-[AIPMT 2000]// this [AIPMT 2000] is have this question in question key and this is also in bold
-1. (b) 2. (c) 3. (b) 4. (a) 5. (d) 6. (a) 7. (a) 8. (c) 9. (a) 10. (a)
-11. (d) 12. (c) 13. (c) 14. (b) 15. (a) 16. (b) 17. (c) 18. (d) 19. (b) 20. (b)
-21. (c) 22. (c) 23. (b) 24. (c) 25. (b) 26. (d) 27. (a) 28. (c) 29. (b) 30. (d)
-31. (c) 32. (b) 33. (b) 34. (a) 35. (d) 36. (a) 37. (b) 38. (b) 39. (c) 40. (c)
-41. (c)
+???
+{
+  "tags": {
+    "exam_type": [
+      "NEET",
+      "AIPMT",
+      "JIPMER",
+      "JEE MAIN",
+      "WBJEE",
+      "AFMC",
+      "AIIMS",
+      "JEE ADV",
+      "AIEEE",
+      "VITEEE",
+      "KCET",
+      "AMU"
+    ],
+    "question_type": [
+      "Direct NCERT Line",
+      "NCERT Exemplar Level",
+      "NCERT Solved Example",
+      "Assertion Reason",
+      "Match the Following",
+      "Statement Based",
+      "Conceptual",
+      "Diagram Based",
+      "Graph Based",
+      "Formula Based",
+      "Experimental/Application",
+      "Multi Concept",
+      "Numerical"
+    ]
+  }
+}
+// this is all preset tags which you wanna set
+
+64. (c) 65. (c) 66. (d) 67. (c) 68. (b) 69. (d) 70. (d)
+71. (b) 72. (a) 73. (c) 74. (c) 75. (d) 76. (a) 77. (c) 78. (c) 79. (b) 80. (b)
+81. (a) 82. (c) 83. (a) 84. (b) 85. (a) 86. (a) 87. (d) 88. (c) 89. (b) 90. (a)
+91. (a) 92. (c) 93. (d) 94. (c) 95. (c) 96. (a) 97. (a) 98. (a) 99. (d) 100. (d)
+101. (b) 102. (d) 103. (a) 104. (a) 105. (b) 106. (b) 107. (d) 108. (b) 109. (a) 110. (a)
+111. (b) 112. (b) 113. (b) 114. (a) 115. (c) 116. (b) 117. (a) 118. (b) 119. (c) 120. (a)
+121. (a) 122. (c) 123. (a) 124. (b) 125. (a) 126. (b) 127. (a) 128. (c) 129. (b) 130. (b)
+131. (c) 132. (d) 133. (a) 134. (c) 135. (b) 136. (d) 137. (c) 138. (b) 139. (a)
+// when i put question then you response
+
+Inline Math: Enclosed in single dollar signs $ ... $ (used for simple variables, single numbers, units, or formulas mixed directly within a sentence).
+
+Block Math: Enclosed in double dollar signs $$...$$ (used for long equations, steps, or fractions that need to be centered on a separate line).
+
+Safe Operators: I will use native LaTeX words like \gt (greater than) and \lt (less than) instead of literal > and < symbols to make sure your web editor never converts them into broken HTML entities like &gt;.
+// this type of latex use

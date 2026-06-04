@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
+import katex from "katex";
 
 function CopyIcon({ size = 14 }: { size?: number }) {
   return (
@@ -18,6 +19,39 @@ function CheckIcon({ size = 14 }: { size?: number }) {
     </svg>
   );
 }
+function LatexText({ text }: { text: string }) {
+  const parts = useMemo(() => {
+    const result: { type: "text" | "math"; content: string }[] = [];
+    const segments = text.split(/(\$[^$]+\$)/g);
+    for (const seg of segments) {
+      if (seg.startsWith("$") && seg.endsWith("$")) {
+        const math = seg.slice(1, -1);
+        try {
+          const html = katex.renderToString(math, { throwOnError: false });
+          result.push({ type: "math", content: html });
+        } catch {
+          result.push({ type: "text", content: seg });
+        }
+      } else if (seg) {
+        result.push({ type: "text", content: seg });
+      }
+    }
+    return result;
+  }, [text]);
+
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.type === "math" ? (
+          <span key={i} dangerouslySetInnerHTML={{ __html: part.content }} />
+        ) : (
+          <span key={i}>{part.content}</span>
+        )
+      )}
+    </>
+  );
+}
+
 function OptionsList({ options }: { options: string[] }) {
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -83,7 +117,7 @@ function OptionRow({ label, value }: { label: string; value: string }) {
         {label}
       </span>
       <span className="flex-1 text-sm text-[#ededed] leading-relaxed truncate">
-        {value}
+        <LatexText text={value} />
       </span>
       <button
         onClick={handleCopy}
@@ -125,9 +159,9 @@ function Field({
           {copied ? "Copied" : "Copy"}
         </button>
       </div>
-      <pre className="font-sans text-sm text-[#ededed] leading-relaxed whitespace-pre-wrap m-0">
-        {value}
-      </pre>
+      <div className="font-sans text-sm text-[#ededed] leading-relaxed whitespace-pre-wrap">
+        <LatexText text={value} />
+      </div>
     </div>
   );
 }

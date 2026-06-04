@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&family=JetBrains+Mono:wght@400&display=swap');
 @import "tailwindcss";
+@import "katex/dist/katex.min.css";
 
 @theme {
   --color-ink: #171717;
