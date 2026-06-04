@@ -7,6 +7,23 @@ function sanitizeLatex(s: string) {
   return s.replace(/\t/g, "\\t").replace(/\r/g, "\\r");
 }
 
+function deepSanitizeLatex(obj: unknown): unknown {
+  if (typeof obj === "string") {
+    return sanitizeLatex(obj);
+  }
+  if (Array.isArray(obj)) {
+    return obj.map(deepSanitizeLatex);
+  }
+  if (obj && typeof obj === "object") {
+    const result: Record<string, unknown> = {};
+    for (const [key, value] of Object.entries(obj)) {
+      result[key] = deepSanitizeLatex(value);
+    }
+    return result;
+  }
+  return obj;
+}
+
 function CopyIcon({ size = 14 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -185,14 +202,19 @@ export default function Page() {
     setCurrentIndex(0);
     try {
       const parsed = JSON.parse(jsonText);
-      setData(parsed);
+      setData(deepSanitizeLatex(parsed));
     } catch {
       try {
         const fixed = jsonText
+          // Escape bare backslashes before letters (handles \text, \frac, \vec, etc.)
+          .replace(/(?<!\\)\\([a-zA-Z])/g, "\\\\$1")
+          // Escape bare backslashes before non-letter chars not in valid JSON escapes
+          .replace(/(?<!\\)\\(?![\\"\/bfnrtu])/g, "\\\\")
+          // Fix any actual tab/CR control chars that got through
           .replace(/\t/g, "\\t")
           .replace(/\r/g, "\\r");
         const parsed = JSON.parse(fixed);
-        setData(parsed);
+        setData(deepSanitizeLatex(parsed));
       } catch {
         setError("Invalid JSON — LaTeX commands like \\text, \\mathrm, \\rightarrow use \\t and \\r which JSON interprets as control characters. Try replacing \\text with \\\\text, or use the .json file directly.");
       }
