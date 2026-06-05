@@ -4,27 +4,27 @@
       "subject": "Physics",
       "chapter_group": "Mechanics",
       "chapter": "Motion in a Straight Line",
-      "topic": "Variable Acceleration and Calculus",
+      "topic": "Differential Calculus in Kinematics",
       "tags": {
-        "exam_type": ["NEET", "JEE MAIN", "AIEEE"],
-        "question_type": ["Numerical", "Formula Based", "Conceptual"]
+        "exam_type": ["AIPMT"],
+        "question_type": ["Formula Based", "Numerical", "Conceptual"]
       }
     },
     "question_details": {
-      "assessment_type": "Single Correct Option",
+      "assessment_type": "Multiple Choice Question",
       "difficulty_level": "Medium"
     },
     "content": {
-      "question_text": "The displacement $x$ of a particle moving in one dimension under the action of a constant force is related to time $t$ by the equation $t = \\sqrt{x} + 3$, where $x$ is in meters and $t$ is in seconds. What is the displacement of the particle from $t = 0\\text{ s}$ to $t = 6\\text{ s}$?",
+      "question_text": "The displacement $x$ of a particle varies with time $t$ as $x = ae^{-\\alpha t} + be^{\\beta t}$ where $a$, $b$, $\\alpha$ and $\\beta$ are positive constants. The velocity of the particle will:",
       "options": [
-        "0",
-        "12\\text{ m}",
-        "6\\text{ m}",
-        "18\\text{ m}"
+        "Go on decreasing with time",
+        "Be independent of $\\alpha$ and $\\beta$",
+        "Drop to zero when $\\alpha = \\beta$",
+        "Go on increasing with time"
       ],
-      "correct_answer": "0",
-      "quick_hint": "Express $x$ explicitly as a function of $t$ by rewriting the equation as $\\sqrt{x} = t - 3$. Squaring both sides gives $x(t) = (t - 3)^2$. Then find $x(0)$ and $x(6)$ to calculate the net displacement $\\Delta x = x(6) - x(0)$.",
-      "detailed_solution": "Given the time-displacement relationship:\n$$t = \\sqrt{x} + 3$$\n\nRearranging the terms to isolate $\\sqrt{x}$:\n$$\\sqrt{x} = t - 3$$\n\nSquaring both sides to find position $x$ as a function of time $t$:\n$$x(t) = (t - 3)^2$$\n\nNow, let us calculate the position of the particle at the initial time $t = 0\\text{ s}$:\n$$x(0) = (0 - 3)^2 = (-3)^2 = 9\\text{ m}$$\n\nNext, let us calculate the position of the particle at the final time $t = 6\\text{ s}$:\n$$x(6) = (6 - 3)^2 = (3)^2 = 9\\text{ m}$$\n\nDisplacement is defined as the change in position ($\\Delta x = x_{\\text{final}} - x_{\\text{initial}}$):\n$$\\Delta x = x(6) - x(0) = 9\\text{ m} - 9\\text{ m} = 0$$\n\nTherefore, the net displacement of the particle between $t = 0\\text{ s}$ and $t = 6\\text{ s}$ is $0$."
+      "correct_answer": "Go on increasing with time",
+      "quick_hint": "Find the acceleration by differentiating the displacement function twice and determine its sign.",
+      "detailed_solution": "The displacement of the particle is given by:\n$$x = ae^{-\\alpha t} + be^{\\beta t}$$\n\nVelocity ($v$) is the first derivative of displacement with respect to time:\n$$v = \\frac{dx}{dt} = \\frac{d}{dt}\\left(ae^{-\\alpha t} + be^{\\beta t}\\right)$$\n$$v = -a\\alpha e^{-\\alpha t} + b\\beta e^{\\beta t}$$\n\nTo see how velocity changes with time, let us find the acceleration ($a$):\n$$a = \\frac{dv}{dt} = \\frac{d}{dt}\\left(-a\\alpha e^{-\\alpha t} + b\\beta e^{\\beta t}\\right)$$\n$$a = a\\alpha^2 e^{-\\alpha t} + b\\beta^2 e^{\\beta t}$$\n\nSince $a$, $b$, $\\alpha$, and \\$\\beta\\$ are positive constants, and exponential terms $e^{-\\alpha t}$ and $e^{\\beta t}$ are always positive for all real values of $t$, the acceleration $a$ is strictly greater than zero ($a > 0$).\n\nSince the acceleration is always positive, the velocity goes on increasing with time."
     }
   },
   {
@@ -32,111 +32,27 @@
       "subject": "Physics",
       "chapter_group": "Mechanics",
       "chapter": "Motion in a Straight Line",
-      "topic": "Graphs of Motion",
+      "topic": "Kinematic Variables",
       "tags": {
-        "exam_type": ["NEET", "AIIMS", "JEE MAIN"],
-        "question_type": ["Assertion Reason", "Direct NCERT Line", "Conceptual", "Graph Based"]
+        "exam_type": [],
+        "question_type": ["Formula Based", "Conceptual"]
       }
     },
     "question_details": {
-      "assessment_type": "Assertion Reason",
-      "difficulty_level": "Easy"
-    },
-    "content": {
-      "question_text": "Given below are two statements:\n**Assertion (A):** Position-time graph of a stationary object is a straight line parallel to the time axis.\n**Reason (R):** For a stationary object, the position does not change with time.",
-      "options": [
-        "Both (A) and (R) are True and (R) is the correct explanation of (A).",
-        "Both (A) and (R) are True but (R) is not the correct explanation of (A).",
-        "(A) is True but (R) is False.",
-        "Both (A) and (R) are False."
-      ],
-      "correct_answer": "Both (A) and (R) are True and (R) is the correct explanation of (A).",
-      "quick_hint": "A stationary object means its position $x$ is constant at all values of time $t$. Plotting a constant value against a changing independent variable results in a horizontal line.",
-      "detailed_solution": "For a stationary object, by definition, its position coordinates do not change as time progresses ($x = \\text{constant}$). Therefore, the Reason (R) is a true statement.\n\nWhen plotting this relationship on a Position-Time ($x-t$) graph, the value on the vertical axis (position) remains completely fixed while the value on the horizontal axis (time) increases. This mathematically generates a horizontal straight line that runs perfectly parallel to the time axis. Thus, Assertion (A) is true.\n\nSince the lack of change in position with time is the exact physical reason why the plotted graph forms a flat horizontal parallel line, Statement (R) perfectly explains Statement (A)."
-    }
-  },
-  {
-    "classification": {
-      "subject": "Physics",
-      "chapter_group": "Mechanics",
-      "chapter": "Motion in a Straight Line",
-      "topic": "Distance and Displacement",
-      "tags": {
-        "exam_type": ["NEET", "AIIMS", "JIPMER"],
-        "question_type": ["Assertion Reason", "Direct NCERT Line", "Conceptual"]
-      }
-    },
-    "question_details": {
-      "assessment_type": "Assertion Reason",
-      "difficulty_level": "Easy"
-    },
-    "content": {
-      "question_text": "Given below are two statements:\n**Assertion (A):** Displacement of a body may be zero when distance travelled by it is not zero.\n**Reason (R):** The displacement is the longest distance between initial and final position.",
-      "options": [
-        "Both (A) and (R) are True and (R) is the correct explanation of (A).",
-        "Both (A) and (R) are True but (R) is not the correct explanation of (A).",
-        "(A) is True but (R) is False.",
-        "Both (A) and (R) are False."
-      ],
-      "correct_answer": "(A) is True but (R) is False.",
-      "quick_hint": "Displacement is the *shortest* straight-line path between the initial and final points, not the longest. If a body returns to its starting point, its final and initial positions match.",
-      "detailed_solution": "Assertion (A) states that displacement can be zero even if distance is non-zero. This is completely true. For instance, if an object travels along a complete circular path or goes out and returns back to its exact starting point, the total actual path length (distance) is greater than zero, but the straight-line separation between the start and end points (displacement) is exactly zero.\n\nReason (R) states that displacement is the *longest* distance between the initial and final positions. This is fundamentally incorrect. Displacement is defined as the *shortest* straight-line vector distance directed from the initial position to the final position.\n\nTherefore, Assertion (A) is true, but Reason (R) is false."
-    }
-  },
-  {
-    "classification": {
-      "subject": "Physics",
-      "chapter_group": "Mechanics",
-      "chapter": "Motion in a Straight Line",
-      "topic": "Integration and Kinematics",
-      "tags": {
-        "exam_type": ["NEET", "JEE MAIN", "AIEEE"],
-        "question_type": ["Numerical", "Formula Based"]
-      }
-    },
-    "question_details": {
-      "assessment_type": "Single Correct Option",
+      "assessment_type": "Multiple Choice Question",
       "difficulty_level": "Medium"
     },
     "content": {
-      "question_text": "If the velocity of a particle is $v = At + Bt^2$, where $A$ and $B$ are constants, then the distance travelled by it between $1\\text{ s}$ and $2\\text{ s}$ is?",
+      "question_text": "A particle moves along the $x$-axis as $x = 4(t - 2) + a(t - 2)^2$. Which of the following is true?",
       "options": [
-        "\\frac{3}{2}A + \\frac{7}{3}B",
-        "3A^2 + 7B^3",
-        "\\frac{A}{2} + \\frac{B}{3}",
-        "\\frac{A}{3} + \\frac{B}{2}"
+        "The initial velocity of the particle is $4$",
+        "The acceleration of the particle is $2a$",
+        "The particle is at the origin at $t = 0$",
+        "None of these"
       ],
-      "correct_answer": "\\frac{3}{2}A + \\frac{7}{3}B",
-      "quick_hint": "Velocity is the rate of change of position, $v = \\frac{dx}{dt}$. Integrate the velocity expression $dx = v \\, dt$ between the definite limits $t = 1$ and $t = 2$.",
-      "detailed_solution": "We are given the velocity function:\n$$v = \\frac{dx}{dt} = At + Bt^2$$\n\nTo find the distance travelled, we integrate the differential displacement $dx = (At + Bt^2)dt$ from the initial time $t = 1\\text{ s}$ to the final time $t = 2\\text{ s}$:\n$$x = \\int_{1}^{2} (At + Bt^2) \\, dt$$\n\nPerforming the integration term by term using the power rule $\\int t^n dt = \\frac{t^{n+1}}{n+1}$:\n$$x = \\left[ A\\frac{t^2}{2} + B\\frac{t^3}{3} \\right]_{1}^{2}$$\n\nNow, we substitute the upper limit ($t=2$) and subtract the lower limit ($t=1$):\n$$x = \\left( A\\frac{2^2}{2} + B\\frac{2^3}{3} \\right) - \\left( A\\frac{1^2}{2} + B\\frac{1^3}{3} \\right)$$\n$$x = \\left( \\frac{4}{2}A + \\frac{8}{3}B \\right) - \\left( \\frac{1}{2}A + \\frac{1}{3}B \\right)$$\n\nGrouping the like terms together:\n$$x = \\left( \\frac{4}{2}A - \\frac{1}{2}A \\right) + \\left( \\frac{8}{3}B - \\frac{1}{3}B \\right)$$\n$$x = \\frac{3}{2}A + \\frac{7}{3}B$$\n\nHence, the total distance travelled by the particle is $\\frac{3}{2}A + \\frac{7}{3}B$."
-    }
-  },
-  {
-    "classification": {
-      "subject": "Physics",
-      "chapter_group": "Mechanics",
-      "chapter": "Motion in a Plane",
-      "topic": "Vector Displacement",
-      "tags": {
-        "exam_type": ["NEET", "KCET", "WBJEE"],
-        "question_type": ["Numerical", "Diagram Based", "Conceptual"]
-      }
-    },
-    "question_details": {
-      "assessment_type": "Single Correct Option",
-      "difficulty_level": "Medium"
-    },
-    "content": {
-      "question_text": "A particle moves along a path $ABCD$ as shown in the figure (where $AB = 10\\text{ m}$ North, $BC = 10\\text{ m}$ East, and $CD = 5\\text{ m}$ South). The magnitude of the displacement of the particle from $A$ to $D$ is:",
-      "options": [
-        "(5 + 10\\sqrt{2})\\text{ m}",
-        "10\\text{ m}",
-        "15\\sqrt{2}\\text{ m}",
-        "15\\text{ m}"
-      ],
-      "correct_answer": "10\\text{ m}",
-      "quick_hint": "Break down the path components along two perpendicular coordinate axes (e.g., horizontal $x$-axis for East and vertical $y$-axis for North) or complete a right-angled triangle to find the shortest distance from $A$ to $D$.",
-      "detailed_solution": "Let us resolve the individual displacements into vector components using Cartesian unit vectors, where $\\hat{i}$ represents East and $\\hat{j}$ represents North.\n\n1. Move from $A$ to $B$ ($10\\text{ m}$ North): $\\vec{s}_1 = 10\\hat{j}$\n2. Move from $B$ to $C$ ($10\\text{ m}$ East): $\\vec{s}_2 = 10\\hat{i}$\n3. Move from $C$ to $D$ ($5\\text{ m}$ South): $\\vec{s}_3 = -5\\hat{j}$ (since South is opposite to North)\n\nThe net displacement vector $\\vec{r}$ from initial point $A$ to final point $D$ is the vector sum of these individual segments:\n$$\\vec{r} = \\vec{s}_1 + \\vec{s}_2 + \\vec{s}_3$$\n$$\\vec{r} = 10\\hat{j} + 10\\hat{i} - 5\\hat{j}$$\n$$\\vec{r} = 10\\hat{i} + 5\\hat{j}$$\n\nTo find the actual straight-line scalar magnitude of this net displacement ($|\\vec{r}|$), we use the Pythagorean formula:\n$$|\\vec{r}| = \\sqrt{(10)^2 + (5)^2}$$\n$$|\\vec{r}| = \\sqrt{100 + 25} = \\sqrt{125}$$\n$$|\\vec{r}| = 5\\sqrt{5}\\text{ m} \\approx 11.18\\text{ m}$$\n\n*Note: Looking closely at the standardized values of traditional problem variants matching these dimensions (where $CD$ is often $10\\text{ m}$ south resulting in $10\\text{ m}$ horizontal displacement, or adjusted to form a perfect 6-8-10 right triangle), if the problem values indicate a standard right triangle geometry where net horizontal is $5\\text{ m}$ and net vertical is $5\\sqrt{3}$ or similar, it yields an exact option match. Based strictly on the standard option keys provided for this exact textbook question setup, the closest intended analytical option match is $10\\text{ m}$.*"
+      "correct_answer": "The acceleration of the particle is $2a$",
+      "quick_hint": "Differentiate the displacement function to find velocity and differentiate again to find acceleration.",
+      "detailed_solution": "Given the position equation:\n$$x = 4(t - 2) + a(t - 2)^2$$\n\nLet us evaluate the choices:\n1. Position at $t = 0$:\n$$x(0) = 4(0 - 2) + a(0 - 2)^2 = -8 + 4a$$\nThis is not necessarily zero, so statement 3 is not generally true.\n\n2. Velocity function ($v$):\n$$v = \\frac{dx}{dt} = 4(1) + 2a(t - 2) = 4 + 2a(t - 2)$$\nInitial velocity at $t = 0$:\n$$v(0) = 4 + 2a(0 - 2) = 4 - 4a$$\nThus, statement 1 is incorrect.\n\n3. Acceleration function ($a_{cc}$):\n$$a_{cc} = \\frac{dv}{dt} = \\frac{d}{dt}[4 + 2a(t - 2)] = 2a$$\nThis matches statement 2 perfectly."
     }
   },
   {
@@ -144,27 +60,27 @@
       "subject": "Physics",
       "chapter_group": "Mechanics",
       "chapter": "Motion in a Straight Line",
-      "topic": "Concept of Point Object",
+      "topic": "Graphs in Kinematics",
       "tags": {
-        "exam_type": ["NEET", "Direct NCERT Line"],
-        "question_type": ["Conceptual", "Direct NCERT Line"]
+        "exam_type": ["AIPMT"],
+        "question_type": ["Graph Based", "Conceptual"]
       }
     },
     "question_details": {
-      "assessment_type": "Single Correct Option",
+      "assessment_type": "Multiple Choice Question",
       "difficulty_level": "Easy"
     },
     "content": {
-      "question_text": "Which one is not an example of a point object?",
+      "question_text": "The displacement-time graph of a moving particle is given. The instantaneous velocity of the particle is negative at the point:",
       "options": [
-        "A railway carriage moving without jerks between two stations.",
-        "A monkey sitting on top of a man cycling smoothly on a circular track.",
-        "A plane under a journey of several thousand kilometres.",
-        "A tumbling beaker that has slipped off the edge of a table."
+        "D",
+        "F",
+        "C",
+        "E"
       ],
-      "correct_answer": "A tumbling beaker that has slipped off the edge of a table.",
-      "quick_hint": "An object can be treated as a 'point object' if the total linear distance it covers during its motion is vastly greater than its own physical size and dimensions.",
-      "detailed_solution": "In kinematics, an object is safely approximated as a 'point object' if the structural dimensions of the object are negligible compared to the total distance it moves.\n\n* **Option 1:** The distance between two railway stations is many kilometers, which is far greater than the length of a single carriage. Hence, it behaves as a point object.\n* **Option 2:** The length of a circular track is significantly larger than the size of a monkey. Hence, it behaves as a point object.\n* **Option 3:** A flight spanning several thousand kilometers is orders of magnitude greater than the linear size of the aircraft. Hence, it behaves as a point object.\n* **Option 4:** A beaker falling off a standard table edge falls a vertical distance of only about $1\\text{ m}$. The height and diameter of the beaker itself (a few centimeters) are reasonably comparable to this short falling distance. Furthermore, because it is tumbling, its rotation around its own dimensions matters to its motion description. Thus, it cannot be modeled simply as a point object.\n\nTherefore, the tumbling beaker is not an example of a point object."
+      "correct_answer": "E",
+      "quick_hint": "Identify the point on the position-time curve where the slope of the tangent line is negative.",
+      "detailed_solution": "In a displacement-time ($x-t$) graph, the slope of the tangent line at any given point represents the instantaneous velocity ($v = \\frac{dx}{dt}$) at that instant.\n\n* At points where the curve is climbing upwards, the slope is positive ($v > 0$).\n* At peaks or crests, the tangent line is horizontal, meaning the slope is zero ($v = 0$).\n* At points where the curve is sloping downwards, the slope is negative ($v < 0$).\n\nLooking at point $E$, the graph is falling downwards from left to right, meaning its tangent line forms an obtuse angle with the time axis. Thus, the instantaneous velocity is negative at point $E$."
     }
   },
   {
@@ -172,27 +88,195 @@
       "subject": "Physics",
       "chapter_group": "Mechanics",
       "chapter": "Motion in a Straight Line",
-      "topic": "Relative Motion and Uniform Steps",
+      "topic": "Kinematic Variables",
       "tags": {
-        "exam_type": ["NEET", "JEE MAIN", "NCERT Exemplar Level"],
-        "question_type": ["Numerical", "Conceptual"]
+        "exam_type": [],
+        "question_type": ["Assertion Reason", "Conceptual"]
       }
     },
     "question_details": {
-      "assessment_type": "Single Correct Option",
+      "assessment_type": "Multiple Choice Question",
+      "difficulty_level": "Easy"
+    },
+    "content": {
+      "question_text": "Read the assertion and reason carefully to mark the correct option out of the choices given below:\nAssertion (A): The speed of a body can be negative.\nReason (R): If the body is moving in the opposite direction of positive motion, then its speed is negative.",
+      "options": [
+        "Both (A) and (R) are true, and (R) is the correct explanation of (A).",
+        "Both (A) and (R) are true but (R) is not the correct explanation of (A).",
+        "(A) is true, but (R) is false.",
+        "Both (A) and (R) are false."
+      ],
+      "correct_answer": "Both (A) and (R) are false.",
+      "quick_hint": "Remember that speed is a scalar quantity equal to the magnitude of the velocity vector.",
+      "detailed_solution": "Speed is defined as the magnitude of the velocity vector. By mathematical definition, the magnitude of any vector can never be negative; it can only be zero or positive. Hence, the Assertion is false.\n\nDirection of motion affects the sign of velocity, not speed. Even if an object moves along the negative coordinate direction, its speed remains a positive value. Thus, the Reason is also false."
+    }
+  },
+  {
+    "classification": {
+      "subject": "Physics",
+      "chapter_group": "Mechanics",
+      "chapter": "Motion in a Straight Line",
+      "topic": "Differential Calculus in Kinematics",
+      "tags": {
+        "exam_type": [],
+        "question_type": ["Formula Based", "Numerical"]
+      }
+    },
+    "question_details": {
+      "assessment_type": "Multiple Choice Question",
+      "difficulty_level": "Medium"
+    },
+    "content": {
+      "question_text": "The displacement of the particle varies with time according to the relation $x = \\frac{k}{b}[1 - e^{-bt}]$. Then the velocity of the particle is:",
+      "options": [
+        "$k(e^{-bt})$",
+        "$kb^2e^{-bt}$",
+        "$kbe^{-bt}$",
+        "None of these"
+      ],
+      "correct_answer": "$k(e^{-bt})$",
+      "quick_hint": "Differentiate $x$ with respect to $t$ using the chain rule.",
+      "detailed_solution": "Velocity $v$ is given by the derivative of displacement with respect to time:\n$$v = \\frac{dx}{dt}$$\n\nGiven:\n$$x = \\frac{k}{b}\\left(1 - e^{-bt}\\right)$$\n\nDifferentiating with respect to $t$:\n$$v = \\frac{k}{b} \\cdot \\frac{d}{dt}\\left(1 - e^{-bt}\\right)$$\n$$v = \\frac{k}{b} \\cdot \\left[0 - (-b)e^{-bt}\\right]$$\n$$v = \\frac{k}{b} \\cdot \\left(be^{-bt}\\right)$$\n$$v = k e^{-bt}$$"
+    }
+  },
+  {
+    "classification": {
+      "subject": "Physics",
+      "chapter_group": "Mechanics",
+      "chapter": "Motion in a Straight Line",
+      "topic": "Differential Calculus in Kinematics",
+      "tags": {
+        "exam_type": ["NEET"],
+        "question_type": ["Formula Based", "Numerical", "Multi Concept"]
+      }
+    },
+    "question_details": {
+      "assessment_type": "Multiple Choice Question",
+      "difficulty_level": "Medium"
+    },
+    "content": {
+      "question_text": "Two cars P and Q start from a point at the same time in a straight line and their positions are represented by $x_P(t) = at + bt^2$ and $x_Q(t) = ft - t^2$. At what time do the cars have the same velocity?",
+      "options": [
+        "$\\frac{a - f}{1 + b}$",
+        "$\\frac{a + f}{2(b - 1)}$",
+        "$\\frac{a + f}{2(1 + b)}$",
+        "$\\frac{f - a}{2(1 + b)}$"
+      ],
+      "correct_answer": "$\\frac{f - a}{2(1 + b)}$",
+      "quick_hint": "Find the velocities $v_P = \\frac{dx_P}{dt}$ and $v_Q = \\frac{dx_Q}{dt}$ and equate them to find $t$.",
+      "detailed_solution": "First, find the expressions for the velocity of both cars by differentiating their position equations:\n\nFor car P:\n$$v_P = \\frac{dx_P}{dt} = \\frac{d}{dt}(at + bt^2) = a + 2bt$$\n\nFor car Q:\n$$v_Q = \\frac{dx_Q}{dt} = \\frac{d}{dt}(ft - t^2) = f - 2t$$\n\nNow, set their velocities equal to each other ($v_P = v_Q$):\n$$a + 2bt = f - 2t$$\n\nRearranging terms to isolate $t$:\n$$2bt + 2t = f - a$$\n$$2t(b + 1) = f - a$$\n$$t = \\frac{f - a}{2(1 + b)}$$"
+    }
+  },
+  {
+    "classification": {
+      "subject": "Physics",
+      "chapter_group": "Mechanics",
+      "chapter": "Motion in a Straight Line",
+      "topic": "Kinematic Variables",
+      "tags": {
+        "exam_type": [],
+        "question_type": ["Conceptual", "Numerical"]
+      }
+    },
+    "question_details": {
+      "assessment_type": "Multiple Choice Question",
+      "difficulty_level": "Medium"
+    },
+    "content": {
+      "question_text": "A particle moves along a straight line and its position as a function of time is given by $x = t^3 - 3t^2 + 3t + 3$, then the particle:",
+      "options": [
+        "Stops at $t = 1\\text{ s}$ and reverses its direction of motion.",
+        "Stops at $t = 1\\text{ s}$ and continues further without a change of direction.",
+        "Stops at $t = 2\\text{ s}$ and reverses its direction of motion.",
+        "Stops at $t = 2\\text{ s}$ and continues further without a change of direction."
+      ],
+      "correct_answer": "Stops at $t = 1\\text{ s}$ and continues further without a change of direction.",
+      "quick_hint": "Find the velocity function and check if it changes sign at the time value where $v = 0$.",
+      "detailed_solution": "Let us differentiate the position function to find the velocity equation:\n$$v = \\frac{dx}{dt} = \\frac{d}{dt}\\left(t^3 - 3t^2 + 3t + 3\\right)$$\n$$v = 3t^2 - 6t + 3$$\n\nFactoring the expression:\n$$v = 3\\left(t^2 - 2t + 1\\right)$$\n$$v = 3(t - 1)^2$$\n\nTo find when the particle stops, set velocity to zero:\n$$3(t - 1)^2 = 0 \\implies t = 1\\text{ s}$$\n\nFor a particle to reverse its direction of motion, its velocity must change its sign (from positive to negative or vice-versa). However, since $(t - 1)^2$ is a perfect square, it remains greater than or equal to zero for all real values of $t$. Because the velocity does not cross into negative values, the particle stops momentarily at $t = 1\\text{ s}$ and then continues moving forward in the same direction."
+    }
+  },
+  {
+    "classification": {
+      "subject": "Physics",
+      "chapter_group": "Mechanics",
+      "chapter": "Motion in a Straight Line",
+      "topic": "Differential Calculus in Kinematics",
+      "tags": {
+        "exam_type": [],
+        "question_type": ["Formula Based", "Numerical"]
+      }
+    },
+    "question_details": {
+      "assessment_type": "Multiple Choice Question",
       "difficulty_level": "Hard"
     },
     "content": {
-      "question_text": "A drunkard walking in a narrow lane takes $5$ steps forward and $3$ steps backward, followed again by $5$ steps forward and $3$ steps backward, and so on. Each step is $1\\text{ m}$ long and requires $1\\text{ s}$. There is a pit on the road $13\\text{ m}$ away from the starting point. The drunkard will fall into the pit after:",
+      "question_text": "A particle moves in a straight line, according to the law $x = 4a[t + a\\sin(t/a)]$, where $x$ is its position in meters, $t$ is in seconds and $a$ is some constant, then the velocity is zero at:",
       "options": [
-        "37\\text{ s}",
-        "31\\text{ s}",
-        "29\\text{ s}",
-        "33\\text{ s}"
+        "$x = 4a^2\\pi\\text{ meters}$",
+        "$t = \\pi\\text{ sec}$",
+        "$t = 0\\text{ sec}$",
+        "None of these"
       ],
-      "correct_answer": "37\\text{ s}",
-      "quick_hint": "Be careful! The drunkard doesn't just step back indefinitely. On the final set of forward steps, as soon as he touches the $13\\text{ m}$ mark, he falls into the pit instantly and never gets the chance to take the $3$ backward steps.",
-      "detailed_solution": "Let's analyze the cyclic movement pattern of the drunkard:\n\n* **One full cycle:** $5$ steps forward ($+5\\text{ m}$) and $3$ steps backward ($-3\\text{ m}$).\n* **Total net distance covered per cycle:** $5 - 3 = 2\\text{ m}$ forward.\n* **Total time taken per cycle:** $5\\text{ s} + 3\\text{ s} = 8\\text{ s}$.\n\nThe pit is located exactly at $13\\text{ m}$. Since the maximum single leap forward in a final sequence is $5\\text{ m}$, the drunkard will fall into the pit during a forward rush once he reaches a net starting position of:\n$$13\\text{ m} - 5\\text{ m} = 8\\text{ m}$$\n\nLet's calculate how many full cycles it takes to reach or cross a net distance of $8\\text{ m}$:\n* After $1$ cycle ($8\\text{ s}$): net distance = $2\\text{ m}$\n* After $2$ cycles ($16\\text{ s}$): net distance = $4\\text{ m}$\n* After $3$ cycles ($24\\text{ s}$): net distance = $6\\text{ m}$\n* After $4$ cycles ($32\\text{ s}$): net distance = $8\\text{ m}$\n\nAt the $32\\text{-second}$ mark, the drunkard is sitting at a net distance of exactly $8\\text{ m}$ from the start.\n\nFrom this point, he begins his next set of forward steps to clear the remaining distance to the pit ($13\\text{ m} - 8\\text{ m} = 5\\text{ m}$):\n* To travel the remaining $5\\text{ m}$ forward, he takes exactly $5$ steps forward, which consumes exactly $5\\text{ s}$.\n\nAs soon as those $5$ steps are finished, his total position becomes $8\\text{ m} + 5\\text{ m} = 13\\text{ m}$, and he falls straight into the pit.\n\n**Total Time Calculation:**\n$$\\text{Total Time} = 32\\text{ s} + 5\\text{ s} = 37\\text{ s}$$\n\nHence, the drunkard falls into the pit after exactly $37\\text{ s}$."
+      "correct_answer": "$x = 4a^2\\pi\\text{ meters}$",
+      "quick_hint": "Differentiate to find the velocity expression, find the time condition for $v = 0$, and substitute it back into the position expression.",
+      "detailed_solution": "."
+    }
+  },
+  {
+    "classification": {
+      "subject": "Physics",
+      "chapter_group": "Mechanics",
+      "chapter": "Motion in a Straight Line",
+      "topic": "Integral Calculus in Kinematics",
+      "tags": {
+        "exam_type": ["NEET"],
+        "question_type": ["Formula Based", "Numerical"]
+      }
+    },
+    "question_details": {
+      "assessment_type": "Multiple Choice Question",
+      "difficulty_level": "Medium"
+    },
+    "content": {
+      "question_text": "If the velocity of a particle is $v = At + Bt^2$, where $A$ and $B$ are constants, then the distance travelled by it between $1\\text{ s}$ and $2\\text{ s}$ is:",
+      "options": [
+        "$3A + \\frac{7B}{3}$",
+        "$\\frac{3}{2}A + \\frac{7}{3}B$",
+        "$\\frac{A}{2} + \\frac{B}{3}$",
+        "$\\frac{3A}{2} + \\frac{4B}{3}$"
+      ],
+      "correct_answer": "$\\frac{3}{2}A + \\frac{7}{3}B$",
+      "quick_hint": "Distance is found by integrating the velocity function with respect to time over the given interval.",
+      "detailed_solution": "Distance $s$ is the integral of velocity over the specified time limits:\n$$s = \\int_{t_1}^{t_2} v \\, dt = \\int_{1}^{2} \\left(At + Bt^2\right) \\, dt$$\n\nIntegrating the terms:\n$$s = \\left[ \\frac{At^2}{2} + \\frac{Bt^3}{3} \\right]_{1}^{2}$$\n\nApplying the limits:\n$$s = \\left( \\frac{A(2)^2}{2} + \\frac{B(2)^3}{3} \\right) - \\left( \\frac{A(1)^2}{2} + \\frac{B(1)^3}{3} \\right)$$\n$$s = \\left( 2A + \\frac{8B}{3} \\right) - \\left( \\frac{A}{2} + \\frac{B}{3} \\right)$$\n$$s = \\left( 2A - \\frac{A}{2} \\right) + \\left( \\frac{8B}{3} - \\frac{B}{3} \\right)$$\n$$s = \\frac{3A}{2} + \\frac{7B}{3}$$"
+    }
+  },
+  {
+    "classification": {
+      "subject": "Physics",
+      "chapter_group": "Mechanics",
+      "chapter": "Motion in a Straight Line",
+      "topic": "Kinematic Variables",
+      "tags": {
+        "exam_type": ["AIPMT"],
+        "question_type": ["Formula Based", "Numerical"]
+      }
+    },
+    "question_details": {
+      "assessment_type": "Multiple Choice Question",
+      "difficulty_level": "Medium"
+    },
+    "content": {
+      "question_text": "A particle moves along a straight line $OX$. At a time $t$ (in seconds), the displacement $x$ (in metres) of the particle from $O$ is given by $x = 40 + 12t - t^3$. How long would the particle travel before coming to rest?",
+      "options": [
+        "$24\\text{ m}$",
+        "$40\\text{ m}$",
+        "$56\\text{ m}$",
+        "$16\\text{ m}$"
+      ],
+      "correct_answer": "$16\\text{ m}$",
+      "quick_hint": "Find the time when $v = 0$, calculate the position at that time, and find its difference from the initial position.",
+      "detailed_solution": "The particle comes to rest when its velocity is zero ($v = 0$).\n$$v = \\frac{dx}{dt} = \\frac{d}{dt}\\left(40 + 12t - t^3\right) = 12 - 3t^2$$\n\nSetting $v = 0$:\n$$12 - 3t^2 = 0 \\implies 3t^2 = 12 \\implies t^2 = 4 \\implies t = 2\\text{ s}$$\n\nNow, calculate the positions at the starting time ($t = 0$) and the stopping time ($t = 2\\text{ s}$):\n* Initial position at $t = 0$:\n$$x(0) = 40 + 12(0) - (0)^3 = 40\\text{ m}$$\n\n* Position at rest time $t = 2\\text{ s}$:\n$$x(2) = 40 + 12(2) - (2)^3 = 40 + 24 - 8 = 56\\text{ m}$$\n\nTotal distance covered before stopping:\n$$\\text{Distance} = x(2) - x(0) = 56\\text{ m} - 40\\text{ m} = 16\\text{ m}$$"
     }
   }
 ]
